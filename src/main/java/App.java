@@ -31,7 +31,7 @@ public class App {
     private static final DateTimeFormatter DATE_FORMAT_4 = DateTimeFormatter.ofPattern("dd/MM/yy");
 
     public App() throws FileNotFoundException {
-        JsonReader reader = new JsonReader(new FileReader("/home/anton/Загрузки/HomeWorkJava8/src/main/resources/organization.json"));
+        JsonReader reader = new JsonReader(new FileReader("/HomeWorkJava8/src/main/resources/organization.json"));
         Type collectionType = new TypeToken<Collection<Organization>>() {
         }.getType();
         Gson gson = new GsonBuilder().registerTypeAdapter(LocalDate.class, (JsonDeserializer<LocalDate>) (json, type, jsonDeserializationContext) -> {
