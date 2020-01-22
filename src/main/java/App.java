@@ -31,7 +31,7 @@ public class App {
     private static final DateTimeFormatter DATE_FORMAT_4 = DateTimeFormatter.ofPattern("dd/MM/yy");
 
     public App() throws FileNotFoundException {
-        JsonReader reader = new JsonReader(new FileReader("/HomeWorkJava8/src/main/resources/organization.json"));
+        JsonReader reader = new JsonReader(new FileReader("organization.json"));
         Type collectionType = new TypeToken<Collection<Organization>>() {
         }.getType();
         Gson gson = new GsonBuilder().registerTypeAdapter(LocalDate.class, (JsonDeserializer<LocalDate>) (json, type, jsonDeserializationContext) -> {
@@ -46,6 +46,7 @@ public class App {
     }
 
     public static void main(String[] args) throws FileNotFoundException {
+        //Для запуска MAVEN проекта отметьте source root папку src
         App app = new App();
         //Выводит все имеющиеся компании
         printOrganization();
